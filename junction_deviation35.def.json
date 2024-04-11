@@ -1,0 +1,169 @@
+{
+    "settings":
+    {
+        "junction_deviation_enable":
+        {
+            "label": "Enable Junction Deviation Control",
+            "description": "Enables adjusting the junction deviation factors in the g-code.",
+            "type": "bool",
+            "default_value": false,
+            "resolve": "any(extruderValues('junction_deviation_enable'))",
+            "settable_per_mesh": false,
+            "settable_per_extruder": false,
+            "settable_per_meshgroup": false
+        },
+        "junction_deviation_factor": {
+            "label": "Junction Deviation",
+            "description": "Sets the Junction Deviation Factor. A value of '0' means no junction deviation compensation is applied.",
+            "type": "float",
+            "default_value": 0,
+            "minimum_value": "0",
+            "maximum_value_warning": "0.3",
+            "settable_per_mesh": false,
+            "settable_per_extruder": true,
+            "settable_per_meshgroup": false,
+            "enabled": "resolveOrValue('junction_deviation_enable')",
+            "children": {
+                "junction_deviation_factor_infill": {
+                    "label": "Infill Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing infill. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable') and infill_sparse_density > 0",
+                    "limit_to_extruder": "infill_extruder_nr"
+                },
+                "junction_deviation_factor_wall": {
+                    "label": "Wall Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing walls. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable')",
+                    "children": {
+                        "junction_deviation_factor_wall_0": {
+                            "label": "Outer Wall Junction Deviation",
+                            "description": "The Junction Deviation Factor used when printing the outermost wall. A value of '0' means no junction deviation compensation is applied for this feature.",
+                            "type": "float",
+                            "default_value": 0,
+                            "minimum_value": "0",
+                            "maximum_value_warning": "0.3",
+                            "settable_per_mesh": false,
+                            "settable_per_extruder": true,
+                            "settable_per_meshgroup": false,
+                            "value": "junction_deviation_factor_wall",
+                            "enabled": "resolveOrValue('junction_deviation_enable')",
+                            "limit_to_extruder": "wall_0_extruder_nr"
+                        },
+                        "junction_deviation_factor_wall_x": {
+                            "label": "Inner Wall Junction Deviation",
+                            "description": "The Junction Deviation Factor used when printing all inner walls. A value of '0' means no junction deviation compensation is applied for this feature.",
+                            "type": "float",
+                            "default_value": 0,
+                            "minimum_value": "0",
+                            "maximum_value_warning": "0.3",
+                            "settable_per_mesh": false,
+                            "settable_per_extruder": true,
+                            "settable_per_meshgroup": false,
+                            "value": "junction_deviation_factor_wall",
+                            "enabled": "resolveOrValue('junction_deviation_enable')",
+                            "limit_to_extruder": "wall_x_extruder_nr"
+                        }
+                    }
+                },
+                "junction_deviation_factor_topbottom": {
+                    "label": "Top/Bottom Skin Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing top/bottom skin layers. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable')",
+                    "limit_to_extruder": "top_bottom_extruder_nr"
+                },
+                "junction_deviation_factor_support": {
+                    "label": "Support Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing support structures. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable') and (support_enable or support_tree_enable)",
+                    "limit_to_extruder": "support_extruder_nr"
+                },
+                "junction_deviation_factor_support_interface": {
+                    "label": "Support Interface Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing support interfaces. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor_support",
+                    "enabled": "resolveOrValue('junction_deviation_enable') and support_interface_enable and (support_enable or support_tree_enable)",
+                    "limit_to_extruder": "support_interface_extruder_nr"
+                },
+                "junction_deviation_factor_prime_tower": {
+                    "label": "Prime Tower Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing the prime tower. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable') and resolveOrValue('prime_tower_enable')"
+                },
+                "junction_deviation_factor_skirt_brim": {
+                    "label": "Skirt/Brim Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing adhesion skirts or brims. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable') and (resolveOrValue('adhesion_type') == 'skirt' or resolveOrValue('adhesion_type') == 'brim' or resolveOrValue('draft_shield_enabled') or resolveOrValue('ooze_shield_enabled'))",
+                    "limit_to_extruder": "adhesion_extruder_nr"
+                },
+                "junction_deviation_factor_layer_0": {
+                    "label": "Initial Layer Junction Deviation",
+                    "description": "The Junction Deviation Factor used when printing the first layer. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "type": "float",
+                    "default_value": 0,
+                    "minimum_value": "0",
+                    "maximum_value_warning": "0.3",
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true,
+                    "settable_per_meshgroup": false,
+                    "value": "junction_deviation_factor",
+                    "enabled": "resolveOrValue('junction_deviation_enable')"
+                }
+            }
+        }
+    }
+}
