@@ -14,7 +14,7 @@
         },
         "junction_deviation_factor": {
             "label": "Junction Deviation",
-            "description": "Sets the Junction Deviation Factor. A value of '0' means no junction deviation compensation is applied.",
+            "description": "Sets the Junction Deviation Factor. A value of '0' means no junction deviation is applied.",
             "type": "float",
             "default_value": 0,
             "minimum_value": "0",
@@ -26,7 +26,7 @@
             "children": {
                 "junction_deviation_factor_infill": {
                     "label": "Infill Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing infill. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing infill. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -40,7 +40,7 @@
                 },
                 "junction_deviation_factor_wall": {
                     "label": "Wall Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing walls. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing walls. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -53,7 +53,7 @@
                     "children": {
                         "junction_deviation_factor_wall_0": {
                             "label": "Outer Wall Junction Deviation",
-                            "description": "The Junction Deviation Factor used when printing the outermost wall. A value of '0' means no junction deviation compensation is applied for this feature.",
+                            "description": "The Junction Deviation Factor used when printing the outermost wall. A value of '0' means no junction deviation is applied for this feature.",
                             "type": "float",
                             "default_value": 0,
                             "minimum_value": "0",
@@ -67,7 +67,7 @@
                         },
                         "junction_deviation_factor_wall_x": {
                             "label": "Inner Wall Junction Deviation",
-                            "description": "The Junction Deviation Factor used when printing all inner walls. A value of '0' means no junction deviation compensation is applied for this feature.",
+                            "description": "The Junction Deviation Factor used when printing all inner walls. A value of '0' means no junction deviation is applied for this feature.",
                             "type": "float",
                             "default_value": 0,
                             "minimum_value": "0",
@@ -83,7 +83,7 @@
                 },
                 "junction_deviation_factor_topbottom": {
                     "label": "Top/Bottom Skin Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing top/bottom skin layers. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing top/bottom skin layers. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -97,7 +97,7 @@
                 },
                 "junction_deviation_factor_support": {
                     "label": "Support Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing support structures. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing support structures. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -111,7 +111,7 @@
                 },
                 "junction_deviation_factor_support_interface": {
                     "label": "Support Interface Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing support interfaces. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing support interfaces. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -125,7 +125,7 @@
                 },
                 "junction_deviation_factor_prime_tower": {
                     "label": "Prime Tower Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing the prime tower. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing the prime tower. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -138,7 +138,7 @@
                 },
                 "junction_deviation_factor_skirt_brim": {
                     "label": "Skirt/Brim Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing adhesion skirts or brims. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing adhesion skirts or brims. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
@@ -152,7 +152,7 @@
                 },
                 "junction_deviation_factor_layer_0": {
                     "label": "Initial Layer Junction Deviation",
-                    "description": "The Junction Deviation Factor used when printing the first layer. A value of '0' means no junction deviation compensation is applied for this feature.",
+                    "description": "The Junction Deviation Factor used when printing the first layer. A value of '0' means no junction deviation is applied for this feature.",
                     "type": "float",
                     "default_value": 0,
                     "minimum_value": "0",
